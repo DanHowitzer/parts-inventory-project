@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="danielhowardinventorysystem.view_controller.AddModifyProductScreenController">
+   <children>
+      <VBox>
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text fx:id="title" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></Text>
+               </children>
+            </HBox>
+            <HBox prefHeight="360.0" prefWidth="263.0">
+               <children>
+                  <VBox prefHeight="321.0" prefWidth="98.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+                           <children>
+                              <Label text="ID" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Name" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Inv" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Price/Cost" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Max" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="321.0" prefWidth="183.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="idField" disable="true" editable="false" prefHeight="25.0" prefWidth="128.0" promptText="Auto Gen - Disabled" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="productNameField" prefHeight="25.0" prefWidth="129.0" promptText="Product Name" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="invField" prefHeight="25.0" prefWidth="86.0" promptText="Inv" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="priceCostField" prefHeight="25.0" prefWidth="87.0" promptText="Price/Cost" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <TextField fx:id="maxField" prefHeight="25.0" prefWidth="49.0" promptText="Max" />
+                              <Label text="Min" />
+                              <TextField fx:id="minField" prefHeight="25.0" prefWidth="57.0" promptText="Min" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox prefHeight="360.0" prefWidth="500.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="344.0" spacing="20.0">
+               <children>
+                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#handleSearchButtonAction" text="Search" />
+                  <TextField fx:id="searchField" />
+               </children>
+            </HBox>
+            <TableView fx:id="addTable" prefHeight="124.0" prefWidth="344.0">
+              <columns>
+                <TableColumn fx:id="addTablePartID" prefWidth="75.0" text="Part ID" />
+                <TableColumn fx:id="addTablePartname" prefWidth="188.0" text="Part Name" />
+                  <TableColumn fx:id="addTableInventoryLevel" prefWidth="101.0" text="Inventory Level" />
+                  <TableColumn fx:id="addTablePricePerUnit" prefWidth="84.0" text="Price per Unit" />
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT" prefHeight="51.0" prefWidth="344.0">
+               <children>
+                  <Button fx:id="addButton" mnemonicParsing="false" onAction="#handleAddButtonAction" text="Add" />
+               </children>
+            </HBox>
+            <TableView fx:id="deleteTable" layoutX="10.0" layoutY="55.0" prefHeight="124.0" prefWidth="344.0">
+               <columns>
+                  <TableColumn fx:id="deleteTablePartID" prefWidth="75.0" text="Part ID" />
+                  <TableColumn fx:id="deleteTablePartName" prefWidth="191.0" text="Part Name" />
+                  <TableColumn fx:id="deleteTableInventoryLevel" prefWidth="95.0" text="Inventory Level" />
+                  <TableColumn fx:id="deleteTablePricePerUnit" prefWidth="87.0" text="Price per Unit" />
+               </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="179.0" prefHeight="39.0" prefWidth="344.0">
+               <children>
+                  <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDeleteButtonAction" text="Delete" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="334.0" prefHeight="39.0" prefWidth="344.0" spacing="10.0">
+               <children>
+                  <Button fx:id="saveButton" mnemonicParsing="false" onAction="#handleSaveButtonAction" text="Save" />
+                  <Button fx:id="cancelButton" layoutX="313.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleCancelButtonAction" text="Cancel" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</HBox>
